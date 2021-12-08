@@ -1,0 +1,13 @@
+@startuml
+actor "Менеджер" as owner
+boundary "Система управления" as app
+boundary "Сайт" as site
+entity "База данных" as data
+actor "Шиномонтажник" as trainee
+owner-> app : Заказ
+app-> data : Запись заказа
+data-> trainee: Заказ на исполнение
+owner-> app : Рейтинг и отзывы
+app-> data : Запись отзывов и рейтинга
+data-> site: Публикация на сайте
+@enduml
